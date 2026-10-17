@@ -46,6 +46,7 @@ const scrollToSection = async (id) => {
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
+    z-index: 100;
 
     .logo {
         display: flex;

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import HeroSection from '@/sections/Home/HeroSection.vue';
+import CoffeeSection from '@/sections/Home/CoffeeSection.vue';
 import NewsSection from '@/sections/Home/NewsSection.vue';
+import NonCoffeeSection from '@/sections/Home/NonCoffeeSection.vue';
 import ProductSection from '@/sections/Home/ProductSection.vue';
 
 
 </script>
 
 <template>
-    <HeroSection/>
-    <ProductSection/>
-    <NewsSection/>
+    <CoffeeSection />
+    <NonCoffeeSection />
 </template>
