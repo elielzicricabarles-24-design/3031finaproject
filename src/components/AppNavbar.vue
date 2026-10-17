@@ -4,15 +4,14 @@
             <a @click="scrollToSection('home')"><img src="@\assets\img\graphic\title.png" alt="logo"></a>
         </div>
         <div class="menu">
+            <a @click="scrollToSection('home')" class="button-text">Home</a>
             <div class="dropdown">
-                <a @click="scrollToSection('home')" class="button-text">Home</a>
+                <a @click="scrollToSection('menu')" class="button-text">Menu</a>
                 <div class="submenu">
-                    <a @click="scrollToSection('hero')">Home</a>    
-                    <a @click="scrollToSection('home_products')">Products</a>
-                    <a @click="scrollToSection('home_news')">News</a>
+                    <a @click="$router.push('coffee')" class="button-text">Coffee</a>
+                    <a @click="$router.push('noncoffee')" class="button-text">Non-Coffee</a>
                 </div>
             </div>
-            <a @click="$router.push('products')" class="button-text">Products</a>
             <a @click="$router.push('aboutus')" class="button-text">About Us</a>
         </div>
     </div>
@@ -27,7 +26,7 @@ const router = useRouter()
 
 const scrollToSection = async (id) => {
     if (router.currentRoute.value.path !== '/') {
-        await router.push('/')  
+        await router.push('/')
     }
 
     setTimeout(() => {
@@ -39,7 +38,7 @@ const scrollToSection = async (id) => {
 </script>
 
 <style scoped>
-.navbar{
+.navbar {
     position: fixed;
     width: 100%;
     height: 100px;
@@ -56,11 +55,11 @@ const scrollToSection = async (id) => {
         cursor: pointer;
 
         img {
-            width: 200px 
+            width: 200px
         }
     }
 
-    .menu{
+    .menu {
         display: grid;
         grid-template-columns: 100px 100px 100px;
         text-align: center;
@@ -71,31 +70,31 @@ const scrollToSection = async (id) => {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
 
-        a{
+        a {
             text-decoration: none;
             color: inherit;
         }
 
-        .button-text{
+        .button-text {
             text-decoration: none;
             color: inherit;
             font-size: 20px;
             transition: font-size 0.25s;
         }
 
-        .button-text:hover{
+        .button-text:hover {
             font-size: 22px;
         }
     }
 
-    
+
 }
 
 .dropdown {
     position: relative;
 
-    .submenu{
-        min-width: 100px;
+    .submenu {
+        min-width: 200px;
         min-height: 0px;
         position: absolute;
         display: flex;
@@ -114,7 +113,7 @@ const scrollToSection = async (id) => {
     }
 }
 
-.dropdown:hover .submenu{
+.dropdown:hover .submenu {
     min-height: 100px;
     display: flex;
     font-size: 20px;
@@ -122,13 +121,13 @@ const scrollToSection = async (id) => {
     background-color: #f5f5f5;
     box-shadow: 0px 5px #666666;
     gap: 10px;
-    
+
 }
 
 /*@media detects the size of the screen. The max-width here is the threshold...*/
 /*...that tells the website to adjust the size if the width of the screen is 768 in this case*/
 @media (max-width: 768px) {
-    .navbar{
+    .navbar {
         height: 150px;
         flex-direction: column;
         justify-content: center;
@@ -141,7 +140,7 @@ const scrollToSection = async (id) => {
             padding: 0;
         }
 
-        .menu{
+        .menu {
             font-size: 1em;
             padding: 0;
         }
