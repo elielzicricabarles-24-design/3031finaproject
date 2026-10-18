@@ -3,18 +3,19 @@
         <section class="hero">
             <div class="container">
                 <div class="left">
-                    <h1><span style="color: #4fb315;">Boost</span> for your energy.</h1>
-                    <h1><span style="color: #4fb315;">Boost</span> for your budget.</h1>
-                    <button @click="$router.push('products')">Explore Coffee Series!</button>
+                    <h1><span style="color: #4fb315">Boost</span> for your energy.</h1>
+                    <h1><span style="color: #4fb315">Boost</span> for your budget.</h1>
+                    <button @click="$router.push('coffee')">Explore Coffee Series!</button>
                     <!--Learned this button trick from https://stackoverflow.com/questions/45638239/enclosing-a-router-link-tag-in-a-button-in-vuejs-->
                 </div>
                 <div class="split"></div>
                 <div class="right">
                     <div class="right-bg">
-                        <div class="img-wrap"><img src="@\assets\img\graphic\hero_coffee.png" alt="Coffee"></div>
+                        <div class="img-wrap">
+                            <img src="@\assets\img\graphic\hero_coffee.png" alt="Coffee" />
+                        </div>
                     </div>
                 </div>
-
             </div>
         </section>
     </div>
@@ -28,7 +29,7 @@
     flex-direction: row;
     justify-content: center;
     background-color: rgb(136, 218, 92);
-    background-image: url("@/assets/img/background/green_bubble_bg.png");
+    background-image: url('@/assets/img/background/green_bubble_bg.png');
     background-position: 0px -200px;
     align-content: center;
 
@@ -38,12 +39,12 @@
         padding-right: 50px;
 
         .right-bg {
-
             align-items: center;
             justify-content: center;
             width: 800px;
             height: 800px;
             clip-path: polygon(100% 0%, 80% 100%, 0% 100%, 20% 0%);
+            /**https://www.cssportal.com/css-clip-path-generator/**/
             background-color: rgb(176, 255, 133);
 
             .img-wrap {
@@ -53,11 +54,13 @@
                 align-items: center;
                 justify-content: center;
 
-
                 img {
                     width: 600px;
                     rotate: 0deg;
-                    transition: width 0.75s cubic-bezier(0.42, 0, 0, 1.32), rotate 1.0s cubic-bezier(0.42, 0, 0, 1.32);
+                    transition:
+                        width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
+                        rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
+                    /**https://www.cssportal.com/css-cubic-bezier-generator/**/
                 }
 
                 img:hover {
@@ -66,12 +69,10 @@
                 }
             }
         }
-
-
     }
 
     .split {
-        width: 50px;
+        width: 10px;
     }
 
     .left {
@@ -80,13 +81,11 @@
         justify-content: center;
         line-height: 100px;
 
-
         h1 {
-            font-size: 70px;
+            font-size: 60px;
             line-height: 50px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #f5f5f5;
-
         }
 
         h2 {
@@ -107,7 +106,11 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             cursor: pointer;
             box-shadow: 0px 0px 10px 0px #4d714c63;
-            transition: width 0.25s, height 0.25s, font-size 0.5s, box-shadow 0.5s;
+            transition:
+                width 0.25s,
+                height 0.25s,
+                font-size 0.5s,
+                box-shadow 0.5s;
         }
 
         button:hover {
@@ -121,70 +124,104 @@
 
 @media (max-width: 768px) {
     .container {
+        padding-top: 150px;
         width: 100%;
-        height: 700px;
+        height: 800px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 64%, rgba(252, 240, 255, 1) 97%, rgba(222, 237, 255, 1) 100%);
-        padding-top: 40px;
-
-        .left {
-            display: none;
-            align-content: center;
-            padding-right: 50px;
-
-            img {
-                width: 100px;
-            }
-        }
+        background-color: rgb(136, 218, 92);
+        background-image: url('@/assets/img/background/green_bubble_bg.png');
+        background-position: 0px 0px;
+        align-content: center;
+        text-align: center;
 
         .right {
             display: flex;
-            flex-direction: column;
-            align-content: center;
             align-items: center;
+            padding-right: 0px;
+
+            .right-bg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 400px;
+                clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+                /**https://www.cssportal.com/css-clip-path-generator/**/
+                background-color: rgb(176, 255, 133, 000);
+
+                .img-wrap {
+                    width: 800px;
+                    height: 800px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 400px;
+                        rotate: 0deg;
+                        transition:
+                            width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
+                            rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
+                        /**https://www.cssportal.com/css-cubic-bezier-generator/**/
+                    }
+
+                    img:hover {
+                        rotate: -10deg;
+                        width: 450px;
+                    }
+                }
+            }
+        }
+
+        .split {
+            width: 10px;
+        }
+
+        .left {
+            display: block;
+            align-content: center;
             justify-content: center;
+            line-height: 100px;
 
             h1 {
-                font-size: 100px;
-                line-height: 100px;
-                align-items: center;
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+                font-size: 60px;
+                line-height: 50px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: #f5f5f5;
             }
 
             h2 {
                 font-weight: lighter;
-                text-align: center;
                 font-family: Arial, Helvetica, sans-serif;
+                line-height: 0px;
             }
 
             button {
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                width: 300px;
-                height: 50px;
-                font-size: 25px;
+                width: 400px;
+                height: 60px;
+                font-size: 30px;
                 border: 0;
                 padding: 10px;
-                background: linear-gradient(45deg, rgba(9, 9, 121, 1) 25%, rgba(0, 111, 255, 1) 100%);
+                background: rgb(243, 255, 243);
                 border-radius: 10px;
-                color: white;
+                color: #4fb315;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 cursor: pointer;
-                box-shadow: 0px 0px 10px 0px #4c5871;
-                transition: width 0.25s, height 0.25s, font-size 0.5s, box-shadow 0.5s;
+                box-shadow: 0px 0px 10px 0px #4d714c63;
+                transition:
+                    width 0.25s,
+                    height 0.25s,
+                    font-size 0.5s,
+                    box-shadow 0.5s;
             }
 
             button:hover {
-                box-shadow: 0px 0px 20px 5px #4c5871;
-                width: 310px;
-                height: 60px;
-                font-size: 27px;
+                box-shadow: 0px 0px 20px 5px #4d714c63;
+                width: 410px;
+                height: 70px;
+                font-size: 32px;
             }
         }
     }

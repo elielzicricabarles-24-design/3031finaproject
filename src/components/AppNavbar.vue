@@ -4,9 +4,8 @@
             <a @click="scrollToSection('home')"><img src="@\assets\img\graphic\title.png" alt="logo"></a>
         </div>
         <div class="menu">
-            <a @click="scrollToSection('home')" class="button-text">Home</a>
             <div class="dropdown">
-                <a @click="scrollToSection('menu')" class="button-text">Menu</a>
+                <a class="button-text">Menu</a>
                 <div class="submenu">
                     <a @click="$router.push('coffee')" class="button-text">Coffee and Tea</a>
                     <p>————————</p>
@@ -14,6 +13,7 @@
                 </div>
             </div>
             <a @click="$router.push('aboutus')" class="button-text">About Us</a>
+            <a @click="$router.push('contact')" class="button-text">Contact</a>
         </div>
     </div>
 </template>

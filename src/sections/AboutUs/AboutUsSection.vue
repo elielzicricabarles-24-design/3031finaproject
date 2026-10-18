@@ -1,120 +1,164 @@
 <template>
-    <div class="about-us">
-        <section class="about-us">
-            <div class="container">
-                <div class="title">
-                    <h1>About Us</h1>
-                </div>
-                <div class="paragraphs">
-                    <div class="left">
-                        <p>We create instruments and effects that encourage musical discovery, reward curiosity, and savor the artistic process. We’re an international team of passionate people, on a mission to navigate uncharted sonic territory in the name of creative empowerment.</p>
-                    </div>
-                    <div class="right">
-                        <p>From the raw analog power of Brute synthesizers to our faithful virtual instrument emulations of V Collection, we provide musicians with an inspiring sonic experience that's instantly accessible, exploratory, and thrilling.</p>
-                    </div>
-                </div>
+  <div class="about-us">
+    <section class="about-us">
+      <div class="container">
+        <div class="left-content">
+          <div class="title">
+            <h1>About Us</h1>
+          </div>
+          <div class="about-text">
+            <div class="about-text-column">
+              <h2>Good Coffee, Everyday Prices</h2>
+              <p>
+                Panda Coffee Ph serves great drinks that anyone can enjoy. We believe good coffee
+                should not be expensive.
+              </p>
             </div>
-        </section>
-    </div>
+
+            <div class="about-text-column">
+              <h2>The Perfect Mix</h2>
+              <p>
+                We are your one-stop drink shop. Enjoy our smooth Caramel Macchiatos, bright Matcha,
+                or sweet Choco Wacko.
+              </p>
+            </div>
+
+            <div class="about-text-column">
+              <h2>Made for You</h2>
+              <p>
+                We love being your friendly neighborhood spot. Whether you are a student on the go
+                or just catching up with friends, we welcome you with great drinks and a warm smile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-img">
+          <img src="@/assets/img/graphic/icon.png" alt="Logo" />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
-.container{
-    width: 100%;
-    height: 100vh;
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(136, 218, 92);
+  background-image: url('@/assets/img/background/green_bubble_bg.png');
+
+  .left-content {
+    width: 60%;
+  }
+
+  .title {
     display: flex;
-    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 10px 20px;
+
+    h1 {
+      height: 2vh;
+      font-size: 76px;
+      line-height: 50px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #f8f8f9;
+    }
+  }
+
+  .about-text {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 40px;
+    padding: 0 35px;
+
+    .about-text-column p {
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+    }
+
+    .about-text-column h2 {
+      height: 8vh;
+      font-size: 25px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #124716;
+    }
+  }
+
+  .right-img {
+    display: flex;
     justify-content: center;
-    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(222, 251, 255, 1) 52%, rgba(99, 232, 255, 1) 100%);
+    padding: 0 50px;
 
-    .title{
-        height: 10vh;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        padding: 50px 20px;
-
-        h1{
-            font-size: 80px;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: #222267;
-        }
-        
+    img {
+      width: 25vw;
+      height: 50vh;
     }
-
-    .paragraphs{
-        width: 100%;
-        height: 40vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-items: space-between;
-        
-
-        p{
-            font-size: 30px;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .left{
-            width: 50vw;
-            height: 50vh;
-        }
-
-        .right{
-            width: 50vw;
-            height: 50vh;
-        }
-    }
+  }
 }
 
 @media (max-width: 768px) {
-    .container{
+  .container {
     width: 100%;
-    height: 100vh;
-    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 100px;
 
-    .title{
-        height: 10vh;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        padding: 50px 20px;
-
-        h1{
-            font-size: 60px;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: #222267;
-        }
-        
+    .left-content {
+      width: 100%;
     }
 
-    .paragraphs{
-        width: 100%;
-        height: 40vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-items: space-between;
-        
+    .title {
+      padding: 24px 0px;
 
-        p{
-            font-size: 25px;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .left{
-            width: 50vw;
-            height: 50vh;
-        }
-
-        .right{
-            width: 50vw;
-            height: 50vh;
-        }
+      h1 {
+        height: auto;
+        font-size: 48px;
+        line-height: 1.1;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #f8f8f9;
+      }
     }
-}
+
+    .about-text {
+      width: 100%;
+      height: auto;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0 0px 24px;
+
+      .about-text-column h2 {
+        width: 80%;
+        height: auto;
+        margin: 0 0 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+      }
+
+      .about-text-column p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+
+    .right-img {
+      padding: 0 20px 24px;
+
+      img {
+        width: 40vw;
+        height: auto;
+      }
+    }
+  }
 }
 </style>
