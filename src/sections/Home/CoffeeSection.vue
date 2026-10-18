@@ -53,6 +53,7 @@
                 align-items: center;
                 justify-content: center;
 
+
                 img {
                     width: 600px;
                     rotate: 0deg;
