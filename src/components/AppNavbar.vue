@@ -8,8 +8,9 @@
             <div class="dropdown">
                 <a @click="scrollToSection('menu')" class="button-text">Menu</a>
                 <div class="submenu">
-                    <a @click="$router.push('coffee')" class="button-text">Coffee</a>
-                    <a @click="$router.push('noncoffee')" class="button-text">Non-Coffee</a>
+                    <a @click="$router.push('coffee')" class="button-text">Coffee and Tea</a>
+                    <p>————————</p>
+                    <a @click="$router.push('noncoffee')" class="button-text">Milk and Fruity</a>
                 </div>
             </div>
             <a @click="$router.push('aboutus')" class="button-text">About Us</a>
@@ -56,7 +57,12 @@ const scrollToSection = async (id) => {
         cursor: pointer;
 
         img {
-            width: 200px
+            width: 200px;
+            transition: width 0.5s cubic-bezier(0.42, 0, 0, 1.32);
+        }
+
+        img:hover {
+            width: 225px
         }
     }
 
@@ -70,6 +76,7 @@ const scrollToSection = async (id) => {
         cursor: pointer;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
+        text-shadow: 0px 0px 0px #77777700;
 
         a {
             text-decoration: none;
@@ -84,6 +91,7 @@ const scrollToSection = async (id) => {
         }
 
         .button-text:hover {
+            text-shadow: 2px 2px 5px #77777777;
             font-size: 22px;
         }
     }
@@ -95,33 +103,35 @@ const scrollToSection = async (id) => {
     position: relative;
 
     .submenu {
-        min-width: 200px;
         min-height: 0px;
         position: absolute;
+        left: 50%;
+        transform: translate(-50%, 10%);
         display: flex;
         flex-direction: column;
         background-color: transparent;
-        text-align: left;
+        text-align: center;
         color: transparent;
-        min-width: 0px;
         border-radius: 5px;
-        padding: 5px 5px;
+        padding: 20px 5px;
         box-shadow: 0px 0px #666666;
+        line-height: 0px;
+
         gap: 0px;
-        font-size: 0px;
+        font-size: 20px;
         transition: font-size 0.25s, gap 1.0s, background-color 0.25s, color 0.25s, min-height 0.25s, box-shadow 0.25s;
         transition-timing-function: cubic-bezier(0.22, 0.05, 0.08, 0.99);
     }
 }
 
 .dropdown:hover .submenu {
-    min-height: 100px;
+    min-height: 60px;
     display: flex;
     font-size: 20px;
     color: #222222;
     background-color: #f5f5f5;
-    box-shadow: 0px 5px #666666;
-    gap: 10px;
+    box-shadow: 0px 1px 0px 3px #666666;
+    gap: 5px;
 
 }
 

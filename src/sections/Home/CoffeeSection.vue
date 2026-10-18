@@ -55,6 +55,13 @@
 
                 img {
                     width: 600px;
+                    rotate: 0deg;
+                    transition: width 0.75s cubic-bezier(0.42, 0, 0, 1.32), rotate 1.0s cubic-bezier(0.42, 0, 0, 1.32);
+                }
+
+                img:hover {
+                    rotate: -10deg;
+                    width: 700px;
                 }
             }
         }

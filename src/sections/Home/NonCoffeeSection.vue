@@ -43,7 +43,14 @@
             justify-content: center;
 
             img {
+                width: 575px;
+                rotate: 0deg;
+                transition: width 0.75s cubic-bezier(0.42, 0, 0, 1.32), rotate 1.0s cubic-bezier(0.42, 0, 0, 1.32);
+            }
+
+            img:hover {
                 width: 600px;
+                rotate: -2deg;
             }
         }
 
@@ -111,12 +118,18 @@
         padding-top: 40px;
 
         .left {
-            display: none;
             align-content: center;
             padding-right: 50px;
 
             img {
                 width: 100px;
+                rotate: 0deg;
+                transition: width 0.75s cubic-bezier(0.42, 0, 0, 1.32), rotate 1.0s cubic-bezier(0.42, 0, 0, 1.32);
+            }
+
+            img:hover {
+                width: 150px;
+                rotate: -2deg;
             }
         }
 
