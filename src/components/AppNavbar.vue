@@ -5,7 +5,7 @@
         </div>
         <div class="menu">
             <div class="dropdown">
-                <a class="button-text">Menu</a>
+                <a class="button-text">Menu ↓</a>
                 <div class="dropdown-hitbox"></div>
                 <div class="submenu">
                     <a @click="$router.push('coffee')" class="button-text">Coffee and Tea</a>
@@ -114,19 +114,23 @@ const scrollToSection = async (id) => {
         display: flex;
         align-items: center;
         justify-items: center;
-        width: 150px;
+        width: 100px;
         height: 40px;
         position: absolute;
-        transform: translate(-30px, -30px);
+        transform: translate(0px, -30px);
         z-index: -10;
     }
 
     .dropdown-hitbox:hover {
         height: 200px;
+        width: 150px;
+        transform: translate(-30px, -30px);
     }
 
     .submenu:hover dropdown-hitbox {
         height: 200px;
+        width: 150px;
+        transform: translate(-30px, -30px);
     }
 
     .submenu {

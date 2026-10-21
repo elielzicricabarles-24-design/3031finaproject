@@ -31,7 +31,6 @@
 .container {
     overflow-x: hidden;
     overflow-y: hidden;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -83,6 +82,7 @@
     }
 
     .left {
+        margin-left: 50px;
         display: block;
         align-content: center;
         justify-content: center;
@@ -131,9 +131,10 @@
 
 @media (max-width: 768px) {
     .container {
-        padding-top: 150px;
+        margin-left: 0px;
+        padding-top: 0px;
         width: 100%;
-        height: 800px;
+        height: 1200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -161,6 +162,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
 
                     img {
                         width: 400px;

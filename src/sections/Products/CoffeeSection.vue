@@ -203,12 +203,12 @@
           img {
             width: 130px;
             height: 180px;
-            transition: width 0.2s;
+            transition: width 0.2s, height 0.2s;
           }
 
           img:hover {
-            width: 150px;
-            height: 160px;
+            width: 140px;
+            height: 200px;
           }
         }
       }

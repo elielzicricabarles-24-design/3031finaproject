@@ -41,7 +41,7 @@
 .container {
     overflow-x: hidden;
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
