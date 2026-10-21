@@ -2,6 +2,11 @@
     <div id="hero">
         <section class="hero">
             <div class="container">
+                <div class="mobile-top">
+                    <div class="img-mobile">
+                        <img src="@\assets\img\graphic\hero_coffee.png" alt="Coffee" class="coffee-img-mobile" />
+                    </div>
+                </div>
                 <div class="left">
                     <h1><span style="color: #4fb315">Boost</span> for your energy.</h1>
                     <h1><span style="color: #4fb315">Boost</span> for your budget.</h1>
@@ -12,7 +17,7 @@
                 <div class="right">
                     <div class="right-bg">
                         <div class="img-wrap">
-                            <img src="@\assets\img\graphic\hero_coffee.png" alt="Coffee" />
+                            <img src="@\assets\img\graphic\hero_coffee.png" alt="Coffee" class="coffee-img" />
                         </div>
                     </div>
                 </div>
@@ -39,6 +44,10 @@
     background-image: url('@/assets/img/background/green_bubble_bg.png');
     background-position: 0px -200px;
 
+    .img-mobile {
+        display: none;
+    }
+
     .right {
         display: flex;
         align-items: center;
@@ -60,16 +69,17 @@
                 align-items: center;
                 justify-content: center;
 
-                img {
+                .coffee-img {
                     width: 600px;
                     rotate: 0deg;
+
                     transition:
                         width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
                         rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
                     /**https://www.cssportal.com/css-cubic-bezier-generator/**/
                 }
 
-                img:hover {
+                .coffee-img:hover {
                     rotate: -10deg;
                     width: 700px;
                 }
@@ -107,6 +117,7 @@
             font-size: 30px;
             border: 0;
             padding: 10px;
+            z-index: 100;
             background: rgb(243, 255, 243);
             border-radius: 10px;
             color: #4fb315;
@@ -132,9 +143,10 @@
 @media (max-width: 768px) {
     .container {
         margin-left: 0px;
+
         padding-top: 0px;
         width: 100%;
-        height: 1200px;
+        height: 1000px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -142,13 +154,42 @@
         text-align: center;
         background-position: 0px 0px;
 
-        .right {
+        .mobile-top {
             display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .img-mobile {
+                width: 100px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .coffee-img-mobile {
+                    width: 300px;
+                    rotate: 0deg;
+
+                    transition:
+                        width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
+                        rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
+                    /**https://www.cssportal.com/css-cubic-bezier-generator/**/
+                }
+
+                .coffee-img-mobile:hover {
+                    rotate: -10deg;
+                    width: 350px;
+                }
+            }
+        }
+
+        .right {
+            display: none;
             align-items: center;
             padding-right: 0px;
 
             .right-bg {
-                display: flex;
+                display: none;
                 align-items: center;
                 justify-content: center;
                 width: 100%;
@@ -164,16 +205,17 @@
                     justify-content: center;
 
 
-                    img {
+                    .coffee-img {
                         width: 400px;
                         rotate: 0deg;
+                        display: none;
                         transition:
                             width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
                             rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
                         /**https://www.cssportal.com/css-cubic-bezier-generator/**/
                     }
 
-                    img:hover {
+                    .cofee-img:hover {
                         rotate: -10deg;
                         width: 450px;
                     }
@@ -186,10 +228,14 @@
         }
 
         .left {
+            margin: 0px;
+            padding: 0px;
             display: block;
             align-content: center;
             justify-content: center;
+            height: 500px;
             line-height: 100px;
+            padding-left: 0px;
 
             h1 {
                 font-size: 60px;

@@ -3,7 +3,8 @@
         <section class="hero">
             <div class="container">
                 <div class="left">
-                    <div class="img-wrap"><img src="@\assets\img\graphic\taro_promo.jpg" alt="Coffee" /></div>
+                    <div class="img-wrap"><img src="@\assets\img\graphic\taro_promo.jpg" alt="Coffee"
+                            class="img-taro-promo" /></div>
                 </div>
                 <div class="split"></div>
                 <div class="right">
@@ -11,6 +12,11 @@
                     <h1><span style="color: #8c62cf">Chill</span> like a panda.</h1>
                     <button @click="$router.push('noncoffee')">Explore Milk Series!</button>
                     <!--Learned this button trick from https://stackoverflow.com/questions/45638239/enclosing-a-router-link-tag-in-a-button-in-vuejs-->
+                </div>
+                <div class="mobile-bottom">
+                    <div class="img-mobile">
+                        <img src="@\assets\img\graphic\hero_frappe.png" alt="Milk" class="milk-img-mobile" />
+                    </div>
                 </div>
             </div>
         </section>
@@ -32,6 +38,10 @@
     background-position: 0px 0px;
     align-content: center;
 
+    .milk-img-mobile {
+        display: none;
+    }
+
     .left {
         display: flex;
         align-items: center;
@@ -43,7 +53,7 @@
             align-items: center;
             justify-content: center;
 
-            img {
+            .img-taro-promo {
                 width: 575px;
                 rotate: 0deg;
                 transition:
@@ -51,7 +61,7 @@
                     rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
             }
 
-            img:hover {
+            .img-taro-promo:hover {
                 width: 600px;
                 rotate: -2deg;
             }
@@ -123,6 +133,35 @@
         align-content: center;
         text-align: center;
 
+        .mobile-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .img-mobile {
+                width: 180px;
+                height: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .milk-img-mobile {
+                    width: 475px;
+                    rotate: 0deg;
+                    display: flex;
+
+                    transition: width 0.75s cubic-bezier(0.42, 0, 0, 1.32),
+                        rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
+                    /**https://www.cssportal.com/css-cubic-bezier-generator/**/
+                }
+
+                .milk-img-mobile:hover {
+                    rotate: 3deg;
+                    width: 500px;
+                }
+            }
+        }
+
         .left {
             display: none;
             align-items: center;
@@ -135,7 +174,7 @@
                 align-items: center;
                 justify-content: center;
 
-                img {
+                .img-taro-promo {
                     width: 400px;
                     rotate: 0deg;
                     transition:
@@ -143,7 +182,7 @@
                         rotate 1s cubic-bezier(0.42, 0, 0, 1.32);
                 }
 
-                img:hover {
+                .img-taro-promo:hover {
                     width: 450px;
                     rotate: -2deg;
                 }
