@@ -6,6 +6,7 @@
         <div class="menu">
             <div class="dropdown">
                 <a class="button-text">Menu</a>
+                <div class="dropdown-hitbox"></div>
                 <div class="submenu">
                     <a @click="$router.push('coffee')" class="button-text">Coffee and Tea</a>
                     <p>————————</p>
@@ -94,6 +95,13 @@ const scrollToSection = async (id) => {
             text-shadow: 2px 2px 5px #77777777;
             font-size: 22px;
         }
+
+        .dropdown-hitbox:hover>.button-text {
+            text-shadow: 2px 2px 5px #77777777;
+            font-size: 22px;
+            background-color: #222222;
+        }
+
     }
 
 
@@ -102,11 +110,29 @@ const scrollToSection = async (id) => {
 .dropdown {
     position: relative;
 
-    .submenu {
-        min-height: 0px;
+    .dropdown-hitbox {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        width: 150px;
+        height: 40px;
         position: absolute;
-        left: 50%;
-        transform: translate(-50%, 10%);
+        transform: translate(-30px, -30px);
+        z-index: -10;
+    }
+
+    .dropdown-hitbox:hover {
+        height: 200px;
+    }
+
+    .submenu:hover dropdown-hitbox {
+        height: 200px;
+    }
+
+    .submenu {
+        height: 0px;
+        position: absolute;
+        transform: translate(-20%, 10%);
         display: flex;
         flex-direction: column;
         background-color: transparent;
@@ -114,25 +140,40 @@ const scrollToSection = async (id) => {
         color: transparent;
         border-radius: 5px;
         padding: 20px 5px;
-        box-shadow: 0px 0px #666666;
+        box-shadow: 0px 0px #66666600;
         line-height: 0px;
-
         gap: 0px;
         font-size: 20px;
-        transition: font-size 0.25s, gap 1.0s, background-color 0.25s, color 0.25s, min-height 0.25s, box-shadow 0.25s;
+        pointer-events: none;
+
+        transition: font-size 0.25s, gap 1.0s, background-color 0.25s, color 0.25s, height 0.25s, box-shadow 0.25s, width 0.25s;
         transition-timing-function: cubic-bezier(0.22, 0.05, 0.08, 0.99);
     }
+
+    .dropdown-hitbox:hover+.submenu {
+        height: 60px;
+        display: flex;
+        font-size: 20px;
+        color: #222222;
+        background-color: #f5f5f5;
+        pointer-events: all;
+
+        box-shadow: 0px 1px 0px 3px #666666;
+        gap: 5px;
+    }
+
 }
 
 .dropdown:hover .submenu {
-    min-height: 60px;
+    height: 60px;
     display: flex;
     font-size: 20px;
     color: #222222;
     background-color: #f5f5f5;
+    pointer-events: all;
+
     box-shadow: 0px 1px 0px 3px #666666;
     gap: 5px;
-
 }
 
 /*@media detects the size of the screen. The max-width here is the threshold...*/

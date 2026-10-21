@@ -22,16 +22,23 @@
 </template>
 
 <style scoped>
-.container {
+.hero {
     width: 100%;
     height: 800px;
+    margin: 0px;
+}
+
+.container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-content: center;
     background-color: rgb(136, 218, 92);
     background-image: url('@/assets/img/background/green_bubble_bg.png');
     background-position: 0px -200px;
-    align-content: center;
 
     .right {
         display: flex;
@@ -130,11 +137,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: rgb(136, 218, 92);
-        background-image: url('@/assets/img/background/green_bubble_bg.png');
-        background-position: 0px 0px;
         align-content: center;
         text-align: center;
+        background-position: 0px 0px;
 
         .right {
             display: flex;
@@ -146,9 +151,8 @@
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-                height: 400px;
-                clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
-                /**https://www.cssportal.com/css-clip-path-generator/**/
+                height: 300px;
+                clip-path: none;
                 background-color: rgb(176, 255, 133, 000);
 
                 .img-wrap {

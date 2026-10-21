@@ -39,6 +39,7 @@
 
 <style scoped>
 .container {
+    overflow-x: hidden;
     width: 100%;
     height: 85vh;
     display: flex;
@@ -57,7 +58,7 @@
 
         h1 {
             font-size: 60px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #fafffb;
         }
 

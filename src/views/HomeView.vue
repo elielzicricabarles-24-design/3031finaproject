@@ -4,6 +4,17 @@ import NonCoffeeSection from '@/sections/Home/NonCoffeeSection.vue'
 </script>
 
 <template>
-    <CoffeeSection />
-    <NonCoffeeSection />
+    <div class="home-page">
+        <CoffeeSection />
+        <NonCoffeeSection />
+    </div>
 </template>
+
+<style scoped>
+.home-page {
+    margin: 0px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+}
+</style>

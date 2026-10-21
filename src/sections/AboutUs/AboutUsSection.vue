@@ -43,6 +43,7 @@
 
 <style scoped>
 .container {
+  overflow-x: hidden;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -98,8 +99,8 @@
     padding: 0 50px;
 
     img {
-      width: 25vw;
-      height: 50vh;
+      width: 300px;
+      height: 300px;
     }
   }
 }
@@ -155,8 +156,8 @@
       padding: 0 20px 24px;
 
       img {
-        width: 40vw;
-        height: auto;
+        width: 300px;
+        height: 300px;
       }
     }
   }

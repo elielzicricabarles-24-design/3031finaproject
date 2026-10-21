@@ -19,6 +19,8 @@
 
 <style scoped>
 .container {
+    overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
     height: 800px;
     display: flex;
@@ -33,7 +35,6 @@
     .left {
         display: flex;
         align-items: center;
-        padding-right: 0px;
 
         .img-wrap {
             width: 800px;

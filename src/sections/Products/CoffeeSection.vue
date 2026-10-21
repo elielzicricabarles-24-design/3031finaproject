@@ -69,6 +69,7 @@
 
 <style scoped>
 .container {
+  overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;

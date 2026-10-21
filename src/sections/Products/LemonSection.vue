@@ -38,6 +38,7 @@
 
 <style scoped>
 .container {
+    overflow-x: hidden;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -59,9 +60,8 @@
         justify-items: center;
         align-items: center;
         text-align: center;
-        line-height: 20px;
         padding-bottom: 50px;
-        line-height: 0px;
+        line-height: auto;
 
         h1 {
             font-size: 80px;
@@ -190,9 +190,7 @@
             justify-items: center;
             align-items: center;
             text-align: center;
-            line-height: 20px;
             padding-bottom: 50px;
-            line-height: 0px;
 
             h1 {
                 font-size: 60px;
